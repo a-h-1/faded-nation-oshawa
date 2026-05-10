@@ -23,9 +23,11 @@ import { FocusCards } from "@/components/ui/focus-cards";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { ExpandableServiceCards } from "@/components/ui/expandable-service-cards";
 
+const BOOK_URL_ANDREA   = "https://book.squareup.com/appointments/f8rs0ghpmmk68d/location/L5W85T7Y8P5E8/services?buttonTextColor=ffffff&color=000000&locale=en-CA&referrer=so&team_member_id=TMYar4PTLZB5M-bk";
+const BOOK_URL_NATHANAEL = "https://book.squareup.com/appointments/f8rs0ghpmmk68d/location/L5W85T7Y8P5E8/services?buttonTextColor=ffffff&color=000000&locale=en-CA&referrer=so&team_member_id=TMpxSs6zmbD0vuiz";
 const BOOK_URL = "https://squareup.com/appointments/book/faded-nation";
-const IG_URL   = "https://instagram.com/fadednation";
-const TT_URL   = "https://tiktok.com/@fadednation";
+const IG_URL   = "https://www.instagram.com/faded_nation_barbershop/";
+const TT_URL   = "https://www.tiktok.com/@faded.nation.barbershop";
 
 const SCISSORS_WH = `url("/cursor.png") 2 2, crosshair`;
 const SCISSORS_PK = `url("/cursor.png") 2 2, crosshair`;
@@ -75,7 +77,7 @@ const DATA = {
           src: "/andrea.png",
           bio: "I infuse every session with the vibrant warmth of Colombian hospitality, offering an elite VIP experience focused on a flawless finish. My expertise combines technical precision with a dedicated level of care, ensuring every guest feels extraordinary.",
           role: "Master Barber",
-          bookHref: BOOK_URL,
+          bookHref: BOOK_URL_ANDREA,
           accentColor: "pink" as const,
         },
         {
@@ -83,7 +85,7 @@ const DATA = {
           src: "/nathanael.png",
           bio: "Drawing from a proud legacy of Mexican artistry, I deliver a masterclass in grooming through technical scissor work and seamless fades. My craft focuses on creating bold signature designs, providing every guest with a sharp and lasting professional hallmark.",
           role: "Master Barber",
-          bookHref: BOOK_URL,
+          bookHref: BOOK_URL_NATHANAEL,
           accentColor: "blue" as const,
         },
       ],
@@ -157,7 +159,7 @@ const DATA = {
           src: "/andrea.png",
           bio: "Infundo cada sesión con la calidez vibrante de la hospitalidad colombiana, ofreciendo una experiencia VIP de élite enfocada en un acabado impecable. Mi experiencia combina la precisión técnica con un nivel de atención dedicada, asegurando que cada invitado se sienta extraordinario.",
           role: "Maestra Barbera",
-          bookHref: BOOK_URL,
+          bookHref: BOOK_URL_ANDREA,
           accentColor: "pink" as const,
         },
         {
@@ -165,7 +167,7 @@ const DATA = {
           src: "/nathanael.png",
           bio: "Partiendo de un orgulloso legado de arte mexicano, ofrezco una clase maestra de barbería a través de cortes técnicos de tijera y desvanecidos perfectos. Mi oficio se enfoca en crear diseños de autor audaces, brindando a cada invitado un sello profesional nítido y duradero.",
           role: "Maestro Barbero",
-          bookHref: BOOK_URL,
+          bookHref: BOOK_URL_NATHANAEL,
           accentColor: "blue" as const,
         },
       ],
@@ -200,23 +202,23 @@ const DATA = {
 };
 
 // ─── HERO SECTION FUNCTION ────────────────────────────────────────────
-function HeroSection({ t }: { t: typeof DATA.en }) {
+function HeroSection({ t, onBook }: { t: typeof DATA.en; onBook: () => void }) {
   const topImages = [
     "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1593702288056-7cc2a55b8f6a?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800&auto=format&fit=crop",
+    "/hero-top-2.png", // this
+    "/hero-top-3.png", // this
+    "/hero-top-4.png", // this
+    "/hero-top-5.png", // this
+    "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800&auto=format&fit=crop", 
   ];
 
   const bottomImages = [
-    "https://images.unsplash.com/photo-1560869713-da86a9ec0744?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1512864084360-7c0d4ee74a7a?q=80&w=800&auto=format&fit=crop",
+    "/hero-bottom-1.png",
+    "/hero-bottom-2.png", 
+    "/hero-bottom-3.png", 
+    "/hero-bottom-4.png", 
+    "/hero-bottom-5.png", 
+    "/hero-bottom-6.png", 
   ];
 
   return (
@@ -282,10 +284,8 @@ function HeroSection({ t }: { t: typeof DATA.en }) {
           >
             {t.hero.viewServices}
           </button>
-          <a
-            href={BOOK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={onBook}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-400"
             style={{ background: "linear-gradient(90deg,#be185d,#ec4899)", boxShadow: "0 0 24px rgba(236,72,153,0.45)" }}
           >
@@ -293,7 +293,7 @@ function HeroSection({ t }: { t: typeof DATA.en }) {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </button>
         </motion.div>
         
       </div>
@@ -333,7 +333,7 @@ function GeoBg({ opacity = 0.028 }: { opacity?: number }) {
 }
 
 // ─── NAVBAR ────────────────────────────────────────────────────
-function Navbar({ lang, setLang, t }: { lang: string; setLang: (l: "en" | "es") => void; t: typeof DATA.en }) {
+function Navbar({ lang, setLang, t, onBook }: { lang: string; setLang: (l: "en" | "es") => void; t: typeof DATA.en; onBook: () => void }) {
   const [scrolled, setScrolled] = useState(false);
   const [mob, setMob] = useState(false);
 
@@ -397,10 +397,10 @@ function Navbar({ lang, setLang, t }: { lang: string; setLang: (l: "en" | "es") 
               <span className="text-white/15">/</span>
               <span className={lang === "es" ? "text-pink-400" : "text-white/30"}>ES</span>
             </button>
-            <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" style={{ cursor: SCISSORS_PK }}
+            <button onClick={onBook} style={{ cursor: SCISSORS_PK }}
               className="px-5 py-2 rounded-full text-[13px] font-semibold text-white bg-gradient-to-r from-[#be185d] to-pink-500 hover:from-pink-500 hover:to-blue-500 hover:-translate-y-px hover:scale-[1.03] active:scale-[.97] transition-all duration-450 shadow-[0_0_18px_rgba(236,72,153,.42)]">
               {t.navBook}
-            </a>
+            </button>
             <button onClick={() => setMob(!mob)} style={{ cursor: SCISSORS_PK }}
               className="md:hidden p-1 text-white/60 hover:text-white transition-colors">
               {mob ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -423,15 +423,79 @@ function Navbar({ lang, setLang, t }: { lang: string; setLang: (l: "en" | "es") 
                 <span className={lang === "en" ? "text-pink-400" : "text-white/30"}>EN</span>/
                 <span className={lang === "es" ? "text-pink-400" : "text-white/30"}>ES</span>
               </button>
-              <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" style={{ cursor: SCISSORS_PK }}
+              <button onClick={onBook} style={{ cursor: SCISSORS_PK }}
                 className="px-6 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-[#be185d] to-pink-500 shadow-[0_0_18px_rgba(236,72,153,.4)]">
                 {t.navBook}
-              </a>
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+// ─── BOOKING MODAL ─────────────────────────────────────────────
+function BookingModal({ onClose, t }: { onClose: () => void; t: typeof DATA.en }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[200] flex items-center justify-center px-4"
+      onClick={onClose}
+    >
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.92, y: 24 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.92, y: 24 }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className="relative z-10 w-full max-w-lg bg-[#0f0f0f] rounded-3xl border border-white/[.08] overflow-hidden shadow-[0_0_80px_rgba(236,72,153,.15)]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-pink-500/40 to-transparent" />
+        <div className="p-8">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <p className="text-[11px] font-mono tracking-[.35em] text-pink-400 uppercase mb-1">◆ BOOK YOUR VISIT ◆</p>
+              <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'Syncopate',sans-serif" }}>Choose Your Barber</h3>
+            </div>
+            <button
+              onClick={onClose}
+              className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all duration-250"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            {t.staff.cards.map((card, i) => (
+              <a
+                key={i}
+                href={card.bookHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-2xl overflow-hidden border border-white/[.06] hover:border-pink-500/30 transition-all duration-350 hover:shadow-[0_0_30px_rgba(236,72,153,.1)]"
+                style={{ aspectRatio: "3/4" }}
+              >
+                <img
+                  src={card.src}
+                  alt={card.title}
+                  className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h4 className="font-bold text-white text-[.9rem] mb-2" style={{ fontFamily: "'Syncopate',sans-serif" }}>{card.title}</h4>
+                  <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-mono tracking-[.1em] uppercase ${card.accentColor === "blue" ? "border border-blue-500/40 bg-blue-500/[.12] text-blue-400" : "border border-pink-500/40 bg-pink-500/[.12] text-pink-400"}`}>
+                    {t.staff.bookWith} {card.title.split(" ")[0]} →
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
@@ -443,6 +507,7 @@ function SLabel({ text }: { text: string }) {
 // ─── ROOT PAGE ─────────────────────────────────────────────────
 export default function FadedNation() {
   const [lang, setLang] = useState<"en" | "es">("en");
+  const [bookingOpen, setBookingOpen] = useState(false);
   const t = DATA[lang];
 
   return (
@@ -477,13 +542,14 @@ export default function FadedNation() {
         }
       `}</style>
 
-      <Navbar lang={lang} setLang={setLang} t={t} />
+      {bookingOpen && <BookingModal onClose={() => setBookingOpen(false)} t={t} />}
+      <Navbar lang={lang} setLang={setLang} t={t} onBook={() => setBookingOpen(true)} />
 
       {/* TracingBeam wraps ALL page content */}
       
 
           {/* HERO */}
-        <HeroSection t={t} />
+        <HeroSection t={t} onBook={() => setBookingOpen(true)} />
 
         {/* SERVICES + STAFF — side by side */}
         <div className="relative">
@@ -545,7 +611,7 @@ export default function FadedNation() {
                         className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-white/40 hover:border-white/40 hover:text-white hover:-translate-y-0.5 transition-all duration-280">
                         <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.29 6.29 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.14 8.14 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg>
                       </a>
-                      <a href="https://wa.me/19055550182" target="_blank" rel="noopener noreferrer" style={{ cursor: SCISSORS_PK }}
+                      <a href="https://wa.me/16475685642" target="_blank" rel="noopener noreferrer" style={{ cursor: SCISSORS_PK }}
                         className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-white/40 hover:border-green-500/50 hover:text-green-400 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(34,197,94,.2)] transition-all duration-280">
                         <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                       </a>
@@ -581,7 +647,7 @@ export default function FadedNation() {
                       </div>
                       <p className="text-white/60 text-[.8rem] leading-[1.65] px-1 mb-3">{card.bio}</p>
                       <a
-                      href={BOOK_URL}
+                      href={card.bookHref}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{ cursor: SCISSORS_PK }}
@@ -645,7 +711,7 @@ export default function FadedNation() {
                 <p className="italic text-white/22 text-[.82rem] max-w-[300px] leading-[1.65] mb-5">"{t.footer.motto}"</p>
                 {[
                   { icon: <MapPin className="w-3.5 h-3.5 text-pink-500/45" />, text: "27 Bond St E, Oshawa, ON L1G 1A8" },
-                  { icon: <Phone className="w-3.5 h-3.5 text-pink-500/45" />, text: "(905) 555-0182" },
+                  { icon: <Phone className="w-3.5 h-3.5 text-pink-500/45" />, text: "(647) 568-0182" },
                 ].map((ci, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-white/55 text-[.8rem] mb-2">{ci.icon}{ci.text}</div>
                 ))}
@@ -664,10 +730,10 @@ export default function FadedNation() {
               <div className="flex flex-col gap-8">
                 <div>
                   <div className="font-mono text-[.65rem] tracking-[.3em] text-white/60 uppercase mb-4">{t.footer.bookLabel}</div>
-                  <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" style={{ cursor: SCISSORS_PK }}
+                  <button onClick={() => setBookingOpen(true)} style={{ cursor: SCISSORS_PK }}
                     className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-[.8rem] font-semibold text-white bg-gradient-to-r from-[#be185d] to-pink-500 hover:from-pink-500 hover:to-blue-500 hover:-translate-y-px transition-all duration-380 shadow-[0_0_18px_rgba(236,72,153,.22)]">
                     {t.footer.bookOnline} <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+                  </button>
                 </div>
                 <div>
                   <div className="font-mono text-[.65rem] tracking-[.3em] text-white/60 uppercase mb-4">{t.footer.connectLabel}</div>
@@ -680,7 +746,7 @@ export default function FadedNation() {
                       className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/40 hover:border-white/40 hover:text-white hover:-translate-y-0.5 transition-all duration-280">
                       <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.29 6.29 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.14 8.14 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg>
                     </a>
-                    <a href="https://wa.me/19055550182" target="_blank" rel="noopener noreferrer" style={{ cursor: SCISSORS_PK }}
+                    <a href="https://wa.me/16475685642" target="_blank" rel="noopener noreferrer" style={{ cursor: SCISSORS_PK }}
                       className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/40 hover:border-green-500/50 hover:text-green-400 hover:-translate-y-0.5 hover:shadow-[0_4px_14px_rgba(34,197,94,.2)] transition-all duration-280">
                       <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     </a>
