@@ -68,6 +68,7 @@ const DATA = {
       headline: "The Artists Behind the Chair.",
       sub: "Meet the hands behind every cut.",
       bookWith: "Book with",
+      connectLabel: "Connect With Us",
       cards: [
         {
           title: "Andrea",
@@ -103,6 +104,9 @@ const DATA = {
       hours: "Hours of Operation",
       rights: "All rights reserved.",
       motto: "Crafting the signature of your success.",
+      bookLabel: "Book",
+      connectLabel: "Connect with us",
+      bookOnline: "Book Online",
       schedule: [
         { day: "Monday – Wednesday", time: "10:00 AM – 8:00 PM" },
         { day: "Thursday",        time: "10:00 AM – 10:00 PM" },
@@ -146,6 +150,7 @@ const DATA = {
       headline: "Los Artistas Detrás de la Silla.",
       sub: "Conoce las manos detrás de cada corte.",
       bookWith: "Reservar con",
+      connectLabel: "Conéctate Con Nosotros",
       cards: [
         {
           title: "Andrea",
@@ -181,6 +186,9 @@ const DATA = {
       hours: "Horario de Atención",
       rights: "Todos los derechos reservados.",
       motto: "Forjando la firma de tu éxito.",
+      bookLabel: "Reservar",
+      connectLabel: "Conéctate Con Nosotros",
+      bookOnline: "Reservar en Línea",
       schedule: [
         { day: "Lunes – Miércoles",  time: "10:00 AM – 8:00 PM" },
         { day: "Jueves",             time: "10:00 AM – 10:00 PM" },
@@ -500,7 +508,7 @@ export default function FadedNation() {
                 <div className="mb-8">
                   <SLabel text={t.staff.label} />
                   <div className="flex items-center gap-4 flex-wrap">
-                    <span className="font-mono text-[.65rem] tracking-[.3em] text-white/50 uppercase">Connect With Us</span>
+                    <span className="font-mono text-[.65rem] tracking-[.3em] text-white/50 uppercase">{t.staff.connectLabel}</span>
                     <div className="flex gap-2">
                       <a href={IG_URL} target="_blank" rel="noopener noreferrer" style={{ cursor: SCISSORS_PK }}
                         className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-white/40 hover:border-pink-500/50 hover:text-pink-400 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(236,72,153,.2)] transition-all duration-280">
@@ -616,14 +624,14 @@ export default function FadedNation() {
               </div>
               <div className="flex flex-col gap-8">
                 <div>
-                  <div className="font-mono text-[.65rem] tracking-[.3em] text-white/60 uppercase mb-4">BOOK</div>
+                  <div className="font-mono text-[.65rem] tracking-[.3em] text-white/60 uppercase mb-4">{t.footer.bookLabel}</div>
                   <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" style={{ cursor: SCISSORS_PK }}
                     className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-[.8rem] font-semibold text-white bg-gradient-to-r from-[#be185d] to-pink-500 hover:from-pink-500 hover:to-blue-500 hover:-translate-y-px transition-all duration-380 shadow-[0_0_18px_rgba(236,72,153,.22)]">
-                    Book Online <ArrowRight className="w-3.5 h-3.5" />
+                    {t.footer.bookOnline} <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
                 <div>
-                  <div className="font-mono text-[.65rem] tracking-[.3em] text-white/60 uppercase mb-4">Connect With Us</div>
+                  <div className="font-mono text-[.65rem] tracking-[.3em] text-white/60 uppercase mb-4">{t.footer.connectLabel}</div>
                   <div className="flex gap-3">
                     <a href={IG_URL} target="_blank" rel="noopener noreferrer" style={{ cursor: SCISSORS_PK }}
                       className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/40 hover:border-pink-500/50 hover:text-pink-400 hover:-translate-y-0.5 hover:shadow-[0_4px_14px_rgba(236,72,153,.2)] transition-all duration-280">
