@@ -27,8 +27,8 @@ const BOOK_URL = "https://squareup.com/appointments/book/faded-nation";
 const IG_URL   = "https://instagram.com/fadednation";
 const TT_URL   = "https://tiktok.com/@fadednation";
 
-const SCISSORS_WH = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24'%3E%3Cg transform='rotate(-45 12 12)'%3E%3Cpath d='M6 9C6 9 4 12 4 15A4 4 0 0 0 12 15C12 15 12 12 10 9Z' fill='white' opacity='.9'/%3E%3Crect x='8.5' y='4' width='3' height='8' rx='1.5' fill='white' opacity='.9'/%3E%3Cellipse cx='6' cy='18' rx='2.5' ry='2' fill='white' opacity='.7'/%3E%3Cellipse cx='18' cy='18' rx='2.5' ry='2' fill='white' opacity='.7'/%3E%3C/g%3E%3C/svg%3E") 11 11,crosshair`;
-const SCISSORS_PK = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24'%3E%3Cg transform='rotate(-45 12 12)'%3E%3Cpath d='M6 9C6 9 4 12 4 15A4 4 0 0 0 12 15C12 15 12 12 10 9Z' fill='%23ec4899'/%3E%3Crect x='8.5' y='4' width='3' height='8' rx='1.5' fill='%23ec4899'/%3E%3Cellipse cx='6' cy='18' rx='2.5' ry='2' fill='%23ec4899' opacity='.85'/%3E%3Cellipse cx='18' cy='18' rx='2.5' ry='2' fill='%23ec4899' opacity='.85'/%3E%3C/g%3E%3C/svg%3E") 11 11,pointer`;
+const SCISSORS_WH = `url("/cursor.png") 2 2, crosshair`;
+const SCISSORS_PK = `url("/cursor.png") 2 2, crosshair`;
 
 // ─── DATA ──────────────────────────────────────────────────────
 
@@ -36,7 +36,7 @@ const DATA = {
   en: {
     navBook: "Book Now",
     hero: {
-      tagline: "IT'S NOT JUST A CUT",
+      tagline: "Faded Nation Barbershop",
       headline: ["Elevate Your ", "Image."],
       sub: "Walk in groomed. Walk out legendary.",
       viewServices: "View Services",
@@ -44,7 +44,7 @@ const DATA = {
       scroll: "Scroll to explore",
     },
     services: {
-      label: "◆ THE MENU ◆",
+      label: "◆ SERVICES ◆",
       headline: "Crafted for the Elite.",
       sub: "Every service includes a complimentary hot towel finish and neck massage.",
       perk: "Free hot towel & massage with every service",
@@ -72,16 +72,16 @@ const DATA = {
       cards: [
         {
           title: "Andrea",
-          src: "https://images.unsplash.com/photo-1595956553066-fe24a8c33395?q=80&w=1000&auto=format&fit=crop",
-          bio: "Colombian lady barber who treats every client like VIP. Precision cuts, clean fades, and an eye for the perfect finish.",
+          src: "/andrea.png",
+          bio: "I infuse every session with the vibrant warmth of Colombian hospitality, offering an elite VIP experience focused on a flawless finish. My expertise combines technical precision with a dedicated level of care, ensuring every guest feels extraordinary.",
           role: "Master Barber",
           bookHref: BOOK_URL,
           accentColor: "pink" as const,
         },
         {
           title: "Nathanael",
-          src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
-          bio: "Mexican barber with 5+ years of experience. Scissors cuts, clean fades, and signature designs that speak for themselves.",
+          src: "/nathanael.png",
+          bio: "Drawing from a proud legacy of Mexican artistry, I deliver a masterclass in grooming through technical scissor work and seamless fades. My craft focuses on creating bold signature designs, providing every guest with a sharp and lasting professional hallmark.",
           role: "Master Barber",
           bookHref: BOOK_URL,
           accentColor: "blue" as const,
@@ -91,13 +91,13 @@ const DATA = {
     testimonials: {
       label: "◆ WORD AROUND TOWN ◆",
       headline: "The Community Speaks.",
-      sub: "Real clients. Real cuts. Real love for the craft.",
+      sub: "Real people. Real cuts. Real love.",
       items: [
-        { quote: "Excellent service and a great atmosphere. The best barber in Oshawa. Don't hesitate to go.", name: "Nazariy I.", designation: "@nazariy.ijhak", src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop" },
-        { quote: "Nathaniel is just amazing. Definitely the best barber in Oshawa! He is fun to chat with and does an absolutely amazing job cutting your hair.", name: "Rohan M.", designation: "@rohan.mittra", src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" },
-        { quote: "Took my son to get a haircut and Nathaneal gave him a great cut. It's super kid friendly, he has booster seats and a PlayStation set up for the kids. Really nice atmosphere! Would definitely recommend coming here!", name: "Anna S.", designation: "@anna.sierra", src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop" },
-        { quote: "Nathanael did an amazing job! Cutting both my hair and my 3-year-old son’s hair. My son had never let anyone cut his hair before, but Nathanael was very patient and made him feel comfortable the whole time. The atmosphere was super welcoming and relaxed, and he’s not only very talented but also great to talk to.", name: "Diego C.", designation: "@diego.castillo", src: "https://images.unsplash.com/photo-1618641986557-1ecd230959aa?q=80&w=800&auto=format&fit=crop" },
-        { quote: "10/10 service and cut! Andrea took pride in her work and delivered a perfect fade and beard trim. Very well run shop with excellent service and attention to detail!", name: "Anthony T.", designation: "@anthony.t", src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" },
+        { quote: "Excellent service and a great atmosphere. The best barber in Oshawa. Don't hesitate to go.", name: "Nazariy I.", designation: "@nazariy.ijhak", src: "/client-1.png" },
+        { quote: "Nathaniel is just amazing. Definitely the best barber in Oshawa! He is fun to chat with and does an absolutely amazing job cutting your hair.", name: "Rohan M.", designation: "@rohan.mittra", src: "/client-2.png" },
+        { quote: "Took my son to get a haircut and Nathaneal gave him a great cut. It's super kid friendly, he has booster seats and a PlayStation set up for the kids. Really nice atmosphere! Would definitely recommend coming here!", name: "Anna S.", designation: "@anna.sierra", src: "/client-3.png" },
+        { quote: "Nathanael did an amazing job! Cutting both my hair and my 3-year-old son’s hair. My son had never let anyone cut his hair before, but Nathanael was very patient and made him feel comfortable the whole time. The atmosphere was super welcoming and relaxed, and he’s not only very talented but also great to talk to.", name: "Diego C.", designation: "@diego.castillo", src: "/client-4.png" },
+        { quote: "10/10 service and cut! Andrea took pride in her work and delivered a perfect fade and beard trim. Very well run shop with excellent service and attention to detail!", name: "Anthony T.", designation: "@anthony.t", src: "/client-5.png" },
       ],
     },
     footer: {
@@ -118,7 +118,7 @@ const DATA = {
   es: {
     navBook: "Reservar",
     hero: {
-      tagline: "NO ES SOLO UN CORTE",
+      tagline: "Barbería Faded Nation",
       headline: ["Eleva Tu ", "Imagen."],
       sub: "Entra con estilo. Sal como leyenda.",
       viewServices: "Ver Servicios",
@@ -126,7 +126,7 @@ const DATA = {
       scroll: "Desplázate para explorar",
     },
     services: {
-      label: "◆ EL MENÚ ◆",
+      label: "◆ SERVICIOS ◆",
       headline: "Creado para la Élite.",
       sub: "Cada servicio incluye toalla caliente y masaje de cuello.",
       perk: "Toalla caliente y masaje gratis con cada servicio",
@@ -154,16 +154,16 @@ const DATA = {
       cards: [
         {
           title: "Andrea",
-          src: "/andrea.jpg",
-          bio: "Barbera colombiana que trata a cada cliente como VIP. Cortes de precisión, fades limpios y un ojo para el acabado perfecto.",
+          src: "/andrea.png",
+          bio: "Infundo cada sesión con la calidez vibrante de la hospitalidad colombiana, ofreciendo una experiencia VIP de élite enfocada en un acabado impecable. Mi experiencia combina la precisión técnica con un nivel de atención dedicada, asegurando que cada invitado se sienta extraordinario.",
           role: "Maestra Barbera",
           bookHref: BOOK_URL,
           accentColor: "pink" as const,
         },
         {
           title: "Nathanael",
-          src: "/nathanael.jpg",
-          bio: "Barbero mexicano con más de 5 años de experiencia. Cortes con tijera, fades limpios y diseños únicos que hablan por sí solos.",
+          src: "/nathanael.png",
+          bio: "Partiendo de un orgulloso legado de arte mexicano, ofrezco una clase maestra de barbería a través de cortes técnicos de tijera y desvanecidos perfectos. Mi oficio se enfoca en crear diseños de autor audaces, brindando a cada invitado un sello profesional nítido y duradero.",
           role: "Maestro Barbero",
           bookHref: BOOK_URL,
           accentColor: "blue" as const,
@@ -173,7 +173,7 @@ const DATA = {
     testimonials: {
       label: "◆ LO QUE DICEN ◆",
       headline: "La Comunidad Habla.",
-      sub: "Clientes reales. Cortes reales. Amor real por el oficio.",
+      sub: "Gente real. Cortes reales. Amor real.",
       items: [
         { quote: "Excelente servicio y un gran ambiente. El mejor barbero en Oshawa. No dudes en ir.", name: "Nazariy I.", designation: "@nazariy.ijhak", src: "/client-1.jpg" },
         { quote: "Nathanael es simplemente increíble. Definitivamente el mejor barbero en Oshawa. Es divertido hablar con él y hace un trabajo absolutamente increíble cortando tu cabello.", name: "Rohan M.", designation: "@rohan.mittra", src: "/client-2.jpg" },
@@ -185,7 +185,7 @@ const DATA = {
     footer: {
       hours: "Horario de Atención",
       rights: "Todos los derechos reservados.",
-      motto: "Forjando la firma de tu éxito.",
+      motto: "Creando el sello distintivo de tu éxito",
       bookLabel: "Reservar",
       connectLabel: "Conéctate Con Nosotros",
       bookOnline: "Reservar en Línea",
@@ -306,6 +306,8 @@ function HeroSection({ t }: { t: typeof DATA.en }) {
           0%   { transform: translateX(-33.333%); }
           100% { transform: translateX(0); }
         }
+          *{ cursor: url("/cursor.png") 0 0, crosshair !important; }
+        a, button { cursor: url("/cursor.png") 0 0, crosshair !important; }
       `}</style>
     </section>
   );
@@ -357,8 +359,19 @@ function Navbar({ lang, setLang, t }: { lang: string; setLang: (l: "en" | "es") 
         <div className="max-w-[1180px] w-full mx-auto flex items-center justify-between">
           <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-2.5 group" style={{ cursor: SCISSORS_PK }}>
-            <div className="w-[34px] h-[34px] rounded-full p-[2px] bg-gradient-to-br from-pink-500 to-blue-500 group-hover:shadow-[0_0_18px_rgba(236,72,153,.5)] transition-shadow duration-300">
-              <div className="w-full h-full rounded-full bg-[#080808] flex items-center justify-center text-[13px] rotate-[-45deg]">✂</div>
+            <div className="relative w-[44px] h-[44px] rounded-full overflow-hidden flex-shrink-0 group-hover:shadow-[0_0_22px_rgba(236,72,153,.6)] transition-shadow duration-300">
+              <img
+                src="/logo-1.png"
+                alt="Faded Nation"
+                className="absolute inset-0 w-full h-full object-cover object-center rounded-full transition-opacity duration-1000"
+                style={{ animationName: "logoFade1", animationDuration: "10s", animationTimingFunction: "ease-in-out", animationIterationCount: "infinite" }}
+              />
+              <img
+                src="/logo-2.png"
+                alt="Faded Nation"
+                className="absolute inset-0 w-full h-full object-cover object-center rounded-full transition-opacity duration-1000"
+                style={{ animationName: "logoFade2", animationDuration: "10s", animationTimingFunction: "ease-in-out", animationIterationCount: "infinite" }}
+              />
             </div>
             <div className="hidden sm:block">
               <div className="font-black text-[13px] text-white leading-none tracking-wide" style={{ fontFamily: "'Syncopate',sans-serif" }}>FADED</div>
@@ -424,7 +437,7 @@ function Navbar({ lang, setLang, t }: { lang: string; setLang: (l: "en" | "es") 
 
 // ─── SECTION LABEL ─────────────────────────────────────────────
 function SLabel({ text }: { text: string }) {
-  return <p className="text-[11px] font-mono tracking-[.35em] text-pink-400 uppercase mb-4">{text}</p>;
+  return <p className="text-[14px] font-mono tracking-[.35em] text-pink-400 uppercase mb-4">{text}</p>;
 }
 
 // ─── ROOT PAGE ─────────────────────────────────────────────────
@@ -448,6 +461,20 @@ export default function FadedNation() {
         ::-webkit-scrollbar-thumb{background:#222;border-radius:2px}
         ::-webkit-scrollbar-thumb:hover{background:#ec4899}
         .font-mono{font-family:'DM Mono',monospace!important}
+        @keyframes logoFade1 {
+          0%   { opacity: 1; }
+          45%  { opacity: 1; }
+          50%  { opacity: 0; }
+          95%  { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        @keyframes logoFade2 {
+          0%   { opacity: 0; }
+          45%  { opacity: 0; }
+          50%  { opacity: 1; }
+          95%  { opacity: 1; }
+          100% { opacity: 0; }
+        }
       `}</style>
 
       <Navbar lang={lang} setLang={setLang} t={t} />
@@ -575,6 +602,7 @@ export default function FadedNation() {
 
         {/* TESTIMONIALS — AnimatedTestimonials */}
         <section id="testimonials" className="relative overflow-hidden">
+          <GeoBg opacity={0.028} />
           <div className="absolute inset-0 bg-[#080808]/0 z-10" />
           <div className="relative z-20 max-w-[1180px] mx-auto px-7">
             <div className="text-center pt-24 pb-0">
@@ -594,13 +622,24 @@ export default function FadedNation() {
           <div className="max-w-[1180px] mx-auto px-7">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-11 pt-16 pb-11">
               <div>
-                <div className="flex items-center gap-2.5 mb-4">
-                  <div className="w-8 h-8 rounded-full p-[2px] bg-gradient-to-br from-pink-500 to-blue-500 opacity-70">
-                    <div className="w-full h-full rounded-full bg-[#080808] flex items-center justify-center text-[11px] rotate-[-45deg]">✂</div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="relative w-[64px] h-[64px] rounded-full overflow-hidden flex-shrink-0 shadow-[0_0_22px_rgba(236,72,153,.35)]">
+                    <img
+                      src="/logo-1.png"
+                      alt="Faded Nation"
+                      className="absolute inset-0 w-full h-full object-cover object-center rounded-full"
+                      style={{ animationName: "logoFade1", animationDuration: "10s", animationTimingFunction: "ease-in-out", animationIterationCount: "infinite" }}
+                    />
+                    <img
+                      src="/logo-2.png"
+                      alt="Faded Nation"
+                      className="absolute inset-0 w-full h-full object-cover object-center rounded-full"
+                      style={{ animationName: "logoFade2", animationDuration: "10s", animationTimingFunction: "ease-in-out", animationIterationCount: "infinite" }}
+                    />
                   </div>
                   <div>
                     <div className="font-black text-[13px] text-white tracking-wide leading-none" style={{ fontFamily: "'Syncopate',sans-serif" }}>FADED NATION</div>
-                    <div className="font-mono text-[9px] text-pink-400/60 tracking-[.3em] mt-0.5 leading-none">OSHAWA · EST. 2022</div>
+                    <div className="font-mono text-[9px] text-pink-400/60 tracking-[.3em] mt-0.5 leading-none">OSHAWA · EST. 2026</div>
                   </div>
                 </div>
                 <p className="italic text-white/22 text-[.82rem] max-w-[300px] leading-[1.65] mb-5">"{t.footer.motto}"</p>
