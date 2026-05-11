@@ -177,11 +177,11 @@ const DATA = {
       headline: "La Comunidad Habla.",
       sub: "Gente real. Cortes reales. Amor real.",
       items: [
-        { quote: "Excelente servicio y un gran ambiente. El mejor barbero en Oshawa. No dudes en ir.", name: "Nazariy I.", designation: "@nazariy.ijhak", src: "/client-1.jpg" },
-        { quote: "Nathanael es simplemente increíble. Definitivamente el mejor barbero en Oshawa. Es divertido hablar con él y hace un trabajo absolutamente increíble cortando tu cabello.", name: "Rohan M.", designation: "@rohan.mittra", src: "/client-2.jpg" },
-        { quote: "Llevé a mi hijo a cortarse el cabello y Nathanael le hizo un corte excelente. Es muy amigable para niños, tiene asientos elevadores y una PlayStation para los pequeños. ¡Muy buen ambiente!", name: "Anna S.", designation: "@anna.sierra", src: "/client-3.jpg" },
-        { quote: "¡Nathanael hizo un trabajo increíble! Cortando el cabello de mi hijo de 3 años que nunca había dejado que nadie lo cortara. Nathanael fue muy paciente y lo hizo sentir cómodo todo el tiempo.", name: "Diego C.", designation: "@diego.castillo", src: "/client-4.jpg" },
-        { quote: "¡Servicio y corte 10/10! Andrea se enorgulleció de su trabajo y entregó un fade perfecto con recorte de barba. ¡Muy buen negocio con excelente servicio y atención al detalle!", name: "Anthony T.", designation: "@anthony.t", src: "/client-5.jpg" },
+        { quote: "Excelente servicio y un gran ambiente. El mejor barbero en Oshawa. No dudes en ir.", name: "Nazariy I.", designation: "@nazariy.ijhak", src: "/client-1.png" },
+        { quote: "Nathanael es simplemente increíble. Definitivamente el mejor barbero en Oshawa. Es divertido hablar con él y hace un trabajo absolutamente increíble cortando tu cabello.", name: "Rohan M.", designation: "@rohan.mittra", src: "/client-2.png" },
+        { quote: "Llevé a mi hijo a cortarse el cabello y Nathanael le hizo un corte excelente. Es muy amigable para niños, tiene asientos elevadores y una PlayStation para los pequeños. ¡Muy buen ambiente!", name: "Anna S.", designation: "@anna.sierra", src: "/client-3.png" },
+        { quote: "¡Nathanael hizo un trabajo increíble! Cortando el cabello de mi hijo de 3 años que nunca había dejado que nadie lo cortara. Nathanael fue muy paciente y lo hizo sentir cómodo todo el tiempo.", name: "Diego C.", designation: "@diego.castillo", src: "/client-4.png" },
+        { quote: "¡Servicio y corte 10/10! Andrea se enorgulleció de su trabajo y entregó un fade perfecto con recorte de barba. ¡Muy buen negocio con excelente servicio y atención al detalle!", name: "Anthony T.", designation: "@anthony.t", src: "/client-5.png" },
       ],
     },
     footer: {
